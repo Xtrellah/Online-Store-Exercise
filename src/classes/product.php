@@ -41,4 +41,16 @@ class Product {
             </div>
         ";
     }
+
+    public function getBasketDisplay(): string
+    {
+        if ($this->discount) {
+            $this->newPrice = $this->price * 0.9;
+            return "$this->name - £$this->newPrice";
+        }
+        else
+        {
+            return "$this->name - £$this->price";
+        }
+    }
 }
